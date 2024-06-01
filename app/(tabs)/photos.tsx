@@ -1,10 +1,9 @@
 import { StyleSheet, Text, View, Image, FlatList } from 'react-native';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 
-const screen1 = () => {
+const Photos = () => {
 
     const [images, setImages] = useState<any[]>([]);
-
 
     useEffect(() => {
         fetch('https://pixabay.com/api/?key=31421579-b15279b752b15d7e7200ce707&q=yellow+flowers&image_type=photo&pretty=true')
@@ -20,8 +19,9 @@ const screen1 = () => {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Screen1</Text>
+            <Text style={styles.title}>Photos</Text>
             <FlatList
+                horizontal
                 data={images}
                 keyExtractor={(item) => item.id.toString()}
                 renderItem={({ item }) => (
@@ -31,42 +31,52 @@ const screen1 = () => {
                             style={styles.image}
                         />
                         <Text style={styles.tags}>Tags: {item.tags}</Text>
-                        <View style={styles.userContainer}>
-                            <Image
-                                source={{ uri: item.userImageURL }}
-                                style={styles.userImage}
-                            />
-                            <Text style={styles.userName}>{item.user}</Text>
-                        </View>
+                    </View>
+                )}
+            />
+            <FlatList
+                horizontal
+                data={images}
+                keyExtractor={(item) => item.id.toString()}
+                renderItem={({ item }) => (
+                    <View style={styles.imageContainer}>
+                        <Image
+                            source={{ uri: item.webformatURL }}
+                            style={styles.image}
+                        />
+                        <Text style={styles.tags}>Tags: {item.tags}</Text>
                     </View>
                 )}
             />
         </View>
-    )
-}
+    );
+};
 
-export default screen1
+export default Photos;
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        overflow: "hidden",
         justifyContent: 'center',
         alignItems: 'center',
         padding: 10,
     },
     title: {
-        fontSize: 24,
-        fontWeight: 'bold',
+        fontSize: 50,
+        fontWeight: '800',
         marginBottom: 20,
+        fontFamily: "Poppins"
     },
     imageContainer: {
-        marginBottom: 20,
         alignItems: 'center',
+        width: 200,
+        marginHorizontal: 3
     },
     image: {
-        width: 300,
+        width: '100%',
         height: 200,
-        borderRadius: 10,
+        borderRadius: 5,
     },
     tags: {
         marginTop: 10,

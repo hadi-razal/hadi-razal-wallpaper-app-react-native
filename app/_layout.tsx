@@ -4,7 +4,7 @@ import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
-import { Text } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import 'react-native-reanimated';
 
 
@@ -51,18 +51,37 @@ function RootLayoutNav() {
     <ThemeProvider value={DefaultTheme}>
       <Stack
         screenOptions={{
-          headerStyle: { backgroundColor: '#f4511e' },
+          title: "",
+          headerStyle: {
+            backgroundColor: '#793BEC',
+          },
+
           headerTintColor: '#fff',
           headerTitleStyle: {
             fontWeight: 'bold',
           },
           headerLeft: () => (
-            <Text >App Title</Text>
+            <Text style={styles.title}>Duoph</Text>
           ),
+
         }}
       >
+
+        <Stack.Screen name="(tabs)" />
 
       </Stack>
     </ThemeProvider>
   );
 }
+
+
+const styles = StyleSheet.create({
+  title: {
+    fontSize: 27,
+    fontWeight: 'bold',
+    marginBottom: 20,
+    color: "white",
+    marginLeft: 3,
+    // paddingVertical: 10
+  }
+})
