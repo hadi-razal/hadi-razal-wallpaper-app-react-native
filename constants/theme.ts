@@ -16,4 +16,11 @@ export default {
     tabIconDefault: '#ccc',
     tabIconSelected: tintColorDark,
   },
+  radius:{
+    xs:10,
+    sm:12,
+    md:14,
+    lg:16,
+    xl:18,
+  }
 };
