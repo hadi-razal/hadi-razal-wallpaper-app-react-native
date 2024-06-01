@@ -1,30 +1,25 @@
-import { StyleSheet } from 'react-native';
-
-import { Text, View } from '@/components/Themed';
+import { StyleSheet, Text, View } from 'react-native';
 import { Link, Stack } from 'expo-router';
 
 export default function ModalScreen() {
   return (
-
     <View style={styles.container}>
-
-
       <Stack.Screen
         options={{
-          title: 'My home',
+          title: "",
           headerStyle: { backgroundColor: '#f4511e' },
           headerTintColor: '#fff',
           headerTitleStyle: {
             fontWeight: 'bold',
           },
+          headerLeft: () => (
+            <Text style={styles.headerLeftTitle}>Duoph</Text>
+          ),
         }}
       />
 
-
       <Text style={styles.title}>Home Screen</Text>
-      <Link style={styles.separator} href={{ pathname: 'details', params: { name: 'Bacon' } }}>Go to Details</Link>
-
-
+      <Link href={'/Screens/screen1'}>Go to Details</Link>
     </View>
   );
 }
@@ -42,9 +37,13 @@ const styles = StyleSheet.create({
   separator: {
     marginVertical: 30,
     height: 1,
-    width: '80%',
-    textAlign: "center",
-    color: "gray",
-    opacity: 1
+    textAlign: 'center',
+    color: 'black',
+  },
+  headerLeftTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#fff',
+    marginLeft: 10,
   },
 });
