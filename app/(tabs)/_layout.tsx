@@ -11,7 +11,8 @@ export default function Layout() {
         tabBarStyle: {
           backgroundColor: "#793BEC",
           borderTopWidth: 0,
-          paddingVertical: 5,
+          paddingVertical: 15,
+          paddingTop: 10
         },
         tabBarShowLabel: true,
         tabBarActiveTintColor: "white",
@@ -22,7 +23,7 @@ export default function Layout() {
         name='index'
         options={{
           tabBarIcon: ({ color }) => (
-            <Ionicons name='home' size={20} color={color} />
+            <Ionicons name='home' size={27} color={color} />
           ),
         }}
       />
@@ -30,7 +31,7 @@ export default function Layout() {
         name='search'
         options={{
           tabBarIcon: ({ color }) => (
-            <Ionicons name='search' size={34} color={color} />
+            <Ionicons name='search' size={27} color={color} />
           ),
         }}
       />
@@ -38,7 +39,15 @@ export default function Layout() {
         name='photos'
         options={{
           tabBarIcon: ({ color }) => (
-            <Ionicons name='albums' size={20} color={color} />
+            <Ionicons name='albums' size={27} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name='profile'
+        options={{
+          tabBarIcon: ({ color }) => (
+            <Ionicons name='person' size={27} color={color} />
           ),
         }}
       />

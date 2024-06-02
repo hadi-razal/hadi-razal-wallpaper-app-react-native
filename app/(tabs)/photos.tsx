@@ -1,12 +1,13 @@
-import { StyleSheet, Text, View, Image, FlatList } from 'react-native';
+import { StyleSheet, Text, View, Image, FlatList, ScrollView } from 'react-native';
 import React, { useEffect, useState } from 'react';
+
 
 const Photos = () => {
 
     const [images, setImages] = useState<any[]>([]);
 
     useEffect(() => {
-        fetch('https://pixabay.com/api/?key=31421579-b15279b752b15d7e7200ce707&q=yellow+flowers&image_type=photo&pretty=true')
+        fetch('https://pixabay.com/api/?key=31421579-b15279b752b15d7e7200ce707&category=soccer')
             .then(response => response.json())
             .then(data => {
                 setImages(data.hits);
@@ -18,37 +19,84 @@ const Photos = () => {
 
 
     return (
-        <View style={styles.container}>
-            <Text style={styles.title}>Photos</Text>
-            <FlatList
-                horizontal
-                data={images}
-                keyExtractor={(item) => item.id.toString()}
-                renderItem={({ item }) => (
-                    <View style={styles.imageContainer}>
-                        <Image
-                            source={{ uri: item.webformatURL }}
-                            style={styles.image}
-                        />
-                        <Text style={styles.tags}>Tags: {item.tags}</Text>
-                    </View>
-                )}
-            />
-            <FlatList
-                horizontal
-                data={images}
-                keyExtractor={(item) => item.id.toString()}
-                renderItem={({ item }) => (
-                    <View style={styles.imageContainer}>
-                        <Image
-                            source={{ uri: item.webformatURL }}
-                            style={styles.image}
-                        />
-                        <Text style={styles.tags}>Tags: {item.tags}</Text>
-                    </View>
-                )}
-            />
-        </View>
+        <ScrollView>
+
+            <View style={styles.container}>
+                <Text style={styles.title}>Photos</Text>
+                <FlatList
+
+                    data={images}
+                    keyExtractor={(item) => item.id.toString()}
+                    horizontal
+                    renderItem={({ item }) => (
+                        <View style={styles.imageContainer}>
+                            <Image
+                                source={{ uri: item.webformatURL }}
+                                style={styles.image}
+                            />
+                            <Text style={styles.tags} numberOfLines={1} ellipsizeMode='tail'>Tags: {item.tags}</Text>
+                        </View>
+                    )}
+                />
+                <FlatList
+                    horizontal
+                    data={images}
+                    keyExtractor={(item) => item.id.toString()}
+                    renderItem={({ item }) => (
+                        <View style={styles.imageContainer}>
+                            <Image
+                                source={{ uri: item.webformatURL }}
+                                style={styles.image}
+                            />
+                            <Text style={styles.tags} numberOfLines={1} ellipsizeMode='tail'>Tags: {item.tags}</Text>
+                        </View>
+                    )}
+                />
+                <FlatList
+                    horizontal
+                    data={images}
+                    keyExtractor={(item) => item.id.toString()}
+                    renderItem={({ item }) => (
+                        <View style={styles.imageContainer}>
+                            <Image
+                                source={{ uri: item.webformatURL }}
+                                style={styles.image}
+                            />
+                            <Text style={styles.tags} numberOfLines={1} ellipsizeMode='tail'>Tags: {item.tags}</Text>
+                        </View>
+                    )}
+                />
+                <FlatList
+                    horizontal
+                    data={images}
+                    keyExtractor={(item) => item.id.toString()}
+                    renderItem={({ item }) => (
+                        <View style={styles.imageContainer}>
+                            <Image
+                                source={{ uri: item.webformatURL }}
+                                style={styles.image}
+                            />
+                            <Text style={styles.tags} numberOfLines={1} ellipsizeMode='tail'>Tags: {item.tags}</Text>
+                        </View>
+                    )}
+                />
+                <FlatList
+                    horizontal
+                    data={images}
+                    keyExtractor={(item) => item.id.toString()}
+                    renderItem={({ item }) => (
+                        <View style={styles.imageContainer}>
+                            <Image
+                                source={{ uri: item.webformatURL }}
+                                style={styles.image}
+                            />
+                            <Text style={styles.tags}>Tags: {item.tags}</Text>
+                        </View>
+                    )}
+                />
+            </View>
+        </ScrollView>
+
     );
 };
 
@@ -56,22 +104,22 @@ export default Photos;
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        overflow: "hidden",
+        gap: 3,
         justifyContent: 'center',
         alignItems: 'center',
         padding: 10,
     },
     title: {
         fontSize: 50,
-        fontWeight: '800',
-        marginBottom: 20,
+        fontWeight: '600',
         fontFamily: "Poppins"
     },
     imageContainer: {
-        alignItems: 'center',
         width: 200,
-        marginHorizontal: 3
+        // height: 250,
+        marginHorizontal: 3,
+        paddingVertical: 5,
+        borderRadius: 5
     },
     image: {
         width: '100%',
