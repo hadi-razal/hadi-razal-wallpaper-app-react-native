@@ -5,8 +5,8 @@ export default function Page() {
     return (
         <View style={styles.container}>
 
-            <Text style={styles.title}>Home</Text>
-            <Link href={'/photos'}>Go to Details</Link>
+            <Text style={styles.title}>Search Page</Text>
+            <Link href={'/tabs/index'}>Go to Details</Link>
         </View>
     );
 }
