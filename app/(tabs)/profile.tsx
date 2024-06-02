@@ -4,8 +4,7 @@ export default function Page() {
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Profile Page</Text>
-
-            <TextInput placeholder='Email' style={{ backgroundColor: "red", width: 300, padding: 3, borderRadius: 5 }} />
+            <TextInput placeholder='Email' style={{ backgroundColor: "#EDEFF0", width: 300, padding: 3, borderRadius: 5, paddingVertical: 10, shadowColor: 'gray', shadowOpacity: 50, shadowOffset: { width: 5, height: 5 }, color: "black" }} />
         </View>
     );
 }
