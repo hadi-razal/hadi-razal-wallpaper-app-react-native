@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 export default function Page() {
     const [name, setName] = useState<string>('');
@@ -16,27 +16,27 @@ export default function Page() {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Profile Page</Text>
+            <Text style={styles.title}>Profile</Text>
             <View style={styles.inputContainer}>
                 <TextInput
                     onChangeText={(text) => setName(text)}
                     value={name}
                     placeholder='Full Name'
-                    placeholderTextColor="#000000"
+                    placeholderTextColor="#b4b5b8"
                     style={styles.input}
                 />
                 <TextInput
                     onChangeText={(text) => setEmail(text)}
                     value={email}
                     placeholder='Email'
-                    placeholderTextColor="#000000"
+                    placeholderTextColor="#b4b5b8"
                     style={styles.input}
                 />
                 <TextInput
                     onChangeText={(text) => setPassword(text)}
                     value={password}
                     placeholder='Password'
-                    placeholderTextColor="#000000"
+                    placeholderTextColor="#b4b5b8"
                     style={styles.input}
                     secureTextEntry
                 />
@@ -54,17 +54,19 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'flex-start',
         padding: 20,
+        paddingHorizontal: 30
     },
     input: {
         backgroundColor: "#d9d9d9",
-        width: 300,
         paddingHorizontal: 7,
         borderRadius: 5,
+        width: '100%',
         paddingVertical: 20,
         marginVertical: 10,
     },
     title: {
-        fontSize: 30,
+        fontSize: 40,
+        color: '#793BEC',
         fontWeight: 'bold',
         paddingVertical: 10,
     },
@@ -74,15 +76,16 @@ const styles = StyleSheet.create({
     },
     btn: {
         paddingHorizontal: 20,
-        paddingVertical: 10,
+        paddingVertical: 20,
         backgroundColor: '#793BEC',
         borderRadius: 10,
+        width: '100%',
         alignItems: 'center',
         marginVertical: 10,
     },
     btnText: {
         color: 'white',
         fontSize: 16,
-        fontWeight: 'bold',
+        fontWeight: '300',
     },
 });
