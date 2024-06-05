@@ -19,7 +19,9 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 50,
+        color: '#793BEC',
         fontWeight: 'bold',
+        paddingVertical: 10,
     },
     separator: {
         marginVertical: 30,

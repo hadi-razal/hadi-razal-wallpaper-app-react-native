@@ -6,7 +6,7 @@ export default function Page() {
         <View style={styles.container}>
 
             <Text style={styles.title}>Home</Text>
-            <Link href={'/photos'}>Go to Details</Link>
+            <Link href={'/Screens/testScreen'}>Go to Details</Link>
         </View>
     );
 }
@@ -19,7 +19,9 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 50,
+        color: '#793BEC',
         fontWeight: 'bold',
+        paddingVertical: 10,
     },
     separator: {
         marginVertical: 30,

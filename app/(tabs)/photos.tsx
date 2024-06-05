@@ -111,8 +111,9 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 50,
-        fontWeight: '600',
-        fontFamily: "Poppins"
+        color: '#793BEC',
+        fontWeight: 'bold',
+        paddingVertical: 10,
     },
     imageContainer: {
         width: 200,
