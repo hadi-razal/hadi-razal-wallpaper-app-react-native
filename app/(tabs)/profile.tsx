@@ -21,7 +21,7 @@ export default function Page() {
                 <TextInput
                     onChangeText={(text) => setName(text)}
                     value={name}
-                    placeholder='Full Name'
+                    placeholder='Name'
                     placeholderTextColor="#b4b5b8"
                     style={styles.input}
                 />
