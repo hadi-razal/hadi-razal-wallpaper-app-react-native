@@ -55,7 +55,7 @@ function RootLayoutNav() {
           headerStyle: {
             backgroundColor: '#793BEC',
           },
-
+          
           headerTintColor: '#fff',
           headerTitleStyle: {
             fontWeight: 'bold',
@@ -67,7 +67,7 @@ function RootLayoutNav() {
         }}
       >
 
-        <Stack.Screen  name="(tabs)" />
+        <Stack.Screen name="(tabs)" />
 
       </Stack>
     </ThemeProvider>
